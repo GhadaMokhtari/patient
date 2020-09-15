@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {ObservationComponent} from './observation/observation.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +17,26 @@ export class RestService {
       .catch(this.handleError);
   }
 
+  getObservation(): Promise<any> {
+    return this.http.get(this.url + 'observation?subject.reference=Patient/123456789', {
+    })
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
+
+  getDiagnostic(): Promise<any> {
+    return this.http.get(this.url + 'observation?subject.reference=Patient/123456789', {
+    })
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
+
+   postObservation(observation: ObservationComponent): Promise<Response> {
+    return this.http.post(this.url + '/observation', observation
+    )
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
 
 
   private handleError(error: any): Promise<any> {
