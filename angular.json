@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "patientProject"
+    }
+  },
+  "defaultProject": "patientProject",
+  "cli": {
+    "analytics": false
+  }
 }
