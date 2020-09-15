@@ -5,17 +5,23 @@ import { AppComponent } from './app.component';
 import { ObservationComponent } from './observation/observation.component';
 import { DiagnosticComponent } from './diagnostic/diagnostic.component';
 import { PatientComponent } from './patient/patient.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
+import { PagePrincipaleComponent } from './page-principale/page-principale.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObservationComponent,
     DiagnosticComponent,
-    PatientComponent
+    PatientComponent,
+    PagePrincipaleComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
