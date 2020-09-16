@@ -17,7 +17,7 @@ medecin: any;
 
   constructor(private service: RestService) {
     service.getPatient().then(patient => this.patient = patient);
-    service.getMedecin().then((medecin => this.medecin= medecin));
+    service.getMedecin().then((medecin => this.medecin = medecin));
   }
 
 }
