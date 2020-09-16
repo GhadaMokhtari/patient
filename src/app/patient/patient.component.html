@@ -15,12 +15,24 @@
   h5,
   h6 {
     margin: 8px 0;
+    font-size: 30px;
   }
 
   p {
     margin: 0;
+    font-size: 20px;
   }
 
+  h1 {
+    color: #d8ba73;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+  }
+
+  b {
+    color: #191970;
+  }
   .spacer {
     flex: 1;
   }
@@ -287,6 +299,17 @@
   .patient{
     margin-top: 50px;
     text-align: center;
+    
+    border-style: none;
+    background-color: #EDF1F4;
+    margin: 0 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
   }
 </style>
 
@@ -306,12 +329,20 @@
 
 </div>
 
-<div class="patient">
+<div>
   <h1>Informations générales</h1>
-  <p> <b> Nom</b> : {{patient.name[0].family}} </p>
+  <br><br><br>
+  <div class="patient">
+  <p><b> Nom</b> : {{patient.name[0].family}} </p>
+<br><br>
   <p> <b> Prénom </b> : {{patient.name[0].given}}</p>
+  <br><br>
   <p> <b> Date de naissance </b> : {{patient.birthDate}}</p>
+  <br><br>
   <p> <b> Genre </b> :  {{patient.gender}}</p>
+  <br><br>
   <p> <b> N° tél  </b> :  {{patient.telecom[0].value}}</p>
+  <br><br>
   <p> <b> Médecin traitant </b>: {{medecin.name[0].given}}</p>
+</div>
 </div>
