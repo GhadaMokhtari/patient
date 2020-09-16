@@ -1,14 +1,34 @@
-<form>
-  <h1> Ajouter une observation </h1>
+<!--
+
   <div class="form-group">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label>Motif</label>
-    <input width="100px" class="form-control" id="motif" aria-describedby="emailHelp" placeholder="Entrer le motif de l'observation">
+    <input  class="form-control" id="motif" aria-describedby="emailHelp" placeholder="Entrer le motif de l'observation">
   </div>
   <div class="form-group">
     <label>Description</label>
-    <input type="text" class="form-control input-sm" id="description" placeholder="Description">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Envoyer</button>
-</form>
+-->
+
+<div class="form-group">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label for="motif">
+Motif :     </label><br>
+    <input type="text" id="motif" class="form-control" name="motif" ngModel><br>
+    <label for="Description">
+Description :     </label><br>
+    <textarea type="text" id="description" class="form-control" name="description" ngModel></textarea>
+    <br>
+
+    <button class="btn btn-primary" type ="submit">Valider</button>
+
+
+  </form>
+
+
+</div>
