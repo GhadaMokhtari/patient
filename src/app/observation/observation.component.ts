@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {RestService} from '../rest.service';
-import {ToasterService} from "angular2-toaster";
+
+import {ToasterService} from 'angular2-toaster';
 
 @Component({
   selector: 'app-observation',
@@ -12,12 +13,12 @@ import {ToasterService} from "angular2-toaster";
 export class ObservationComponent implements OnInit {
   obs: any;
   service: any;
-  toasterService : ToasterService;
+  toasterService: ToasterService;
 
 
-  constructor(private service1: RestService, toasterService : ToasterService) {
+  constructor(private service1: RestService, toasterService: ToasterService) {
     this.service = service1;
-    this.toasterService=toasterService;
+    this.toasterService = toasterService;
   }
 
   ngOnInit() {
@@ -43,8 +44,8 @@ export class ObservationComponent implements OnInit {
       valueString: form.value.description
     };
     console.log(ob);
-    this.service.postObservation(ob).then(data => {console.log(data);});
-    this.toasterService.pop('pop','Observation','Observation enregistrée');
+    this.service.postObservation(ob).then(data => {console.log(data); });
+    this.toasterService.pop('pop', 'Observation', 'Observation enregistrée');
 
 
 
