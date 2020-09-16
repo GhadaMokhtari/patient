@@ -55,6 +55,12 @@ export class RestService {
       .catch(this.handleError);
   }
 
+  getAppointment(): Promise<any> {
+    return this.http.get(this.url + 'appointment?participant.actor.reference=Patient/123456789', {
+    }).toPromise().then(response => response)
+      .catch(this.handleError);
+  }
+
 
 
 
