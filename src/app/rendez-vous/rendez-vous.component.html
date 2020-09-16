@@ -503,6 +503,34 @@
   }
 
 
+
+  h1 { color: #d8ba73; }
+
+  .listObs {
+    text-align:center;
+    border-style: none;
+    background-color: #EDF1F4;
+    margin: 0 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    column-count: 2;
+  }
+  h2 {color:#396d7b;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  p {
+    color: #396d7b;
+    margin: 0;
+    text-align: left;
+  }
 </style>
 
 
@@ -546,11 +574,12 @@
   </div>
   <div class="form-group">
 
-    <h1>Liste des Observations</h1>  <br>
-    <ul *ngFor="let r of rdv">
-      <h2>Date du rendez-vous :  {{r.start|date:'dd-mm-yyyy HH:MM'}}</h2><br>
-      Motif : {{r.comment}}<br>
-      Etat : {{r.status}}
+    <h1 style="text-align: center">Liste des Rendez-Vous</h1> <br>
+
+    <ul class="listObs"  *ngFor="let r of rdv">
+      <p style="text-align: center; font-size: 20px"><b>Date du rendez-vous : </b>{{r.start|date:'dd-mm-yyyy HH:MM'}}</p><br>
+      <p><b>Motif du rendez-vous : </b>{{r.comment}} &nbsp; &nbsp;
+        <b>Etat du rendez-vous :</b> {{r.status}}</p>
       <br>
     </ul>
   </div>
