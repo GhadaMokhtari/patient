@@ -296,7 +296,42 @@
 
   #bienvenue{
     margin-top: 80px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    background-color: #1976d2;
+    border-radius: 10px;
+    color: #eeeeee;
+    font-size: x-large;
   }
+
+  #btnOb{
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  #btnDia{
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  #btnAff{
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  #btnRDV{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
 </style>
 
 <!-- Toolbar -->
@@ -308,7 +343,8 @@
   />
   <div class="spacer"></div>
   <div>
-    <a routerLink="/patient" style="color: #eeeeee">Compte</a>
+    <a routerLink="/patient" style="color: #eeeeee; margin-right: 20px">Accueil</a>
+    <a routerLink="/patient" style="color: #eeeeee; margin-right: 20px">Compte</a>
   </div>
 
 </div>
@@ -316,15 +352,17 @@
 <div class="content" role="main">
 
   <!-- Highlight Card -->
-  <div id="bienvenue" class="card highlight-card card-small">
-    <span> Welcome to {{patient.name[0].given}} {{patient.name[0].family}}  </span>
+  <div id="bienvenue" class="card">
+    <span style="text-align: center"> Bienvenue {{patient.name[0].given}} {{patient.name[0].family}}  </span>
   </div>
 
   <div class="card">
-    <button class="btn btn-secondary"> <a routerLink="/observation">Créer une observation</a> </button>
-    <button> <a routerLink="/diagnostic">Afficher le diagnostic</a> </button>
-    <button> <a routerLink="/observationPatient">Afficher les observations </a></button>
-    <!-- <button type="submit" class="btn btn-info pull-right" style="height: 50px; width: 100px;background-color: #abc6d9" > Créer une observation </button>
-     <button class="btn btn-info pull-right" style="height: 50px; width: 100px;background-color: #abc6d9" > afficher le diagnostic </button>-->
+    <button id="btnOb"> <a routerLink="/observation">Créer une observation</a> </button>
+    <button id="btnDia"> <a routerLink="/diagnostic">Afficher le diagnostic</a> </button>
+    <button id="btnAff"> <a routerLink="/observationPatient">Afficher les observations </a></button>
+  </div>
+
+  <div class="card">
+    <button id="btnRDV" style="color: #1976d2"> Prendre un RDV </button>
   </div>
 </div>
