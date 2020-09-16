@@ -284,6 +284,9 @@
    h1 { color: #d79a10; }
 </style>
 
+
+<div style="background-image: url(././assets/stethoscope-2617701_1920.jpg);background-size: cover;background-repeat: no-repeat">
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
@@ -302,6 +305,7 @@
 
 <div class="form-group" id="form">
   <h1>Entrez vos symptômes</h1>
+  <toaster-container></toaster-container>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label for="motif">
 <h3>Motif</h3>     </label><br>
@@ -317,5 +321,7 @@
   </form>
 
 
+
+</div>
 
 </div>

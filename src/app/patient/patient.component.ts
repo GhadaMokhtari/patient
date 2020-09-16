@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class PatientComponent implements OnInit {
 patient: any;
 medecin: any;
+birthDay: string;
 
   ngOnInit(): void {
   }
@@ -19,5 +20,4 @@ medecin: any;
     service.getPatient().then(patient => this.patient = patient);
     service.getMedecin().then((medecin => this.medecin = medecin));
   }
-
 }
