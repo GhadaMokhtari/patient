@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {RestService} from '../rest.service';
 
+
 @Component({
   selector: 'app-rendez-vous',
   templateUrl: './rendez-vous.component.html',
@@ -10,6 +11,8 @@ import {RestService} from '../rest.service';
 export class RendezVousComponent implements OnInit {
 service: any;
 rdv: any;
+
+
   constructor(private service1: RestService) {
     this.service = service1;
     this.service.getAppointment().then(rdv => this.rdv = rdv);

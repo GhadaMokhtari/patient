@@ -15,7 +15,6 @@ const routes: Routes = [
   {path : 'patient', component: PatientComponent},
   {path : 'rdv', component: RendezVousComponent},
   { path: 'observationPatient', component: ObservationPatientComponent }
-
 ];
 
 @NgModule({
