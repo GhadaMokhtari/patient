@@ -8,17 +8,43 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
+  h1{
+    text-align: center;
+    color: #d8ba73;
+  }
+  h2 {color:#396d7b;
+    font-style: normal;
+    text-align: center;}
+
+
   h4,
   h5,
   h6 {
     margin: 8px 0;
   }
 
+  .listObs {
+    text-align:center;
+    border-style:solid;
+    background-color: #EDF1F4;
+    border: 1px solid #E0E8ED;
+    border-radius: 5px;
+    margin: 0 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    column-count: 2;
+  }
+
+
   p {
+    color: #396d7b;
     margin: 0;
+    text-align: left;
   }
 
   .spacer {
@@ -284,12 +310,13 @@
       visibility: hidden;
     }
   }
-  .diag{
+  .obs{
     margin-top: 50px;
     text-align: center;
   }
 
   h1 { color: #d79a10; }
+
 </style>
 
 <!-- Toolbar -->
@@ -309,15 +336,15 @@
 
 
 </div>
-<div class="diag">
-<h1>Liste des Diagnostics</h1>  <br>
-<ul *ngFor="let d of diag">
 
-  <h2>Titre :  {{d.code.coding[0].display}}</h2><br>
-      Date : {{d.issued}} <br>
-      Conclusion : {{d.conclusion}}<br>
-  <br>
-</ul>
+  <div class="obs">
 
-</div>
+    <h1 style="text-align: center">Liste des Diagnostics</h1>  <br>
+    <ul class="listObs"  *ngFor="let d of diag">
+
+      <h2 style="font-size:20px;">{{d.code.coding[0].display}}</h2><br>
+      <p> <b>{{d.conclusion}}</b> <br> Date : {{d.issued}}<br></p>
+      <br>
+    </ul>
+  </div>
 </div>
