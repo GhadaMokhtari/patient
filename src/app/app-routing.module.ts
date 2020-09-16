@@ -4,13 +4,16 @@ import {RouterModule, Routes} from '@angular/router';
 import {ObservationComponent} from './observation/observation.component';
 import {PagePrincipaleComponent} from './page-principale/page-principale.component';
 import {DiagnosticComponent} from './diagnostic/diagnostic.component';
-import {PatientComponent} from "./patient/patient.component";
+import {PatientComponent} from './patient/patient.component';
+import {RendezVousComponent} from './rendez-vous/rendez-vous.component';
 
 const routes: Routes = [
   {path : '', component: PagePrincipaleComponent},
   { path: 'observation', component: ObservationComponent },
   {path: 'diagnostic', component: DiagnosticComponent},
-  {path :'patient', component: PatientComponent}
+  {path : 'patient', component: PatientComponent},
+  {path : 'rdv', component: RendezVousComponent},
+
 ];
 
 
