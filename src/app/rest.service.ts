@@ -25,13 +25,7 @@ export class RestService {
       .catch(this.handleError);
   }
 
-  getObservation(observation: any): Promise<any> {
-    return this.http.put(this.url + 'observation?subject.reference=Patient/123456789', observation)
-      .toPromise().then(response => response)
-      .catch(this.handleError);
-  }
-
-  observationDuPatient(): Promise<any> {
+  getObservation(): Promise<any> {
     return this.http.get(this.url + 'observation?subject.reference=Patient/123456789')
       .toPromise().then(response => response)
       .catch(this.handleError);

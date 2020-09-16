@@ -305,11 +305,11 @@
 </div>
 <div class="diag">
 <h1>Liste des Diagnostic</h1>  <br>
-<li *ngFor="let d of diag">
+<ul *ngFor="let d of diag">
 
   <h2>Titre :  {{d.code.coding[0].display}}</h2><br>
 Conclusion : {{d.conclusion}}<br>
   <br>
-</li>
+</ul>
 
 </div>

@@ -11,8 +11,7 @@ const routes: Routes = [
   {path : '', component: PagePrincipaleComponent},
   { path: 'observation', component: ObservationComponent },
   {path: 'diagnostic', component: DiagnosticComponent},
-  {path : 'patient', component: PatientComponent}
-  ,
+  {path : 'patient', component: PatientComponent},
   { path: 'observationPatient', component: ObservationPatientComponent }
 
 ];

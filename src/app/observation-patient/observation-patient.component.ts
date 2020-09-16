@@ -10,7 +10,7 @@ export class ObservationPatientComponent implements OnInit {
   obs: any;
 
   constructor(private service: RestService) {
-    service.observationDuPatient().then(obs => this.obs = obs);
+    service.getObservation().then(obs => this.obs = obs);
     console.log(this.obs);
   }
 
