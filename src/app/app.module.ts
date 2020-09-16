@@ -11,11 +11,13 @@ import {RouterModule} from '@angular/router';
 import { PagePrincipaleComponent } from './page-principale/page-principale.component';
 import {FormsModule} from '@angular/forms';
 import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
+import {ObservationPatientComponent} from './observation-patient/observation-patient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObservationComponent,
+    ObservationPatientComponent,
     DiagnosticComponent,
     PatientComponent,
     PagePrincipaleComponent,

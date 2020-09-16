@@ -6,6 +6,7 @@ import {PagePrincipaleComponent} from './page-principale/page-principale.compone
 import {DiagnosticComponent} from './diagnostic/diagnostic.component';
 import {PatientComponent} from './patient/patient.component';
 import {RendezVousComponent} from './rendez-vous/rendez-vous.component';
+import {ObservationPatientComponent} from './observation-patient/observation-patient.component';
 
 const routes: Routes = [
   {path : '', component: PagePrincipaleComponent},
@@ -13,9 +14,10 @@ const routes: Routes = [
   {path: 'diagnostic', component: DiagnosticComponent},
   {path : 'patient', component: PatientComponent},
   {path : 'rdv', component: RendezVousComponent},
+  {path : 'patient', component: PatientComponent},
+  { path: 'observationPatient', component: ObservationPatientComponent }
 
 ];
-
 
 @NgModule({
   declarations: [],
