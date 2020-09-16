@@ -8,17 +8,41 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
+  h1{
+    text-align: center;
+    color: #d8ba73;
+  }
+  h2 {color:#396d7b;
+    font-style: normal;
+  text-align: center;}
+
+  
   h4,
   h5,
   h6 {
     margin: 8px 0;
   }
 
+  .listObs {
+    text-align:center;
+    border-style: none;
+    background-color: #EDF1F4;
+    margin: 0 400px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    column-count: 2;
+  }
+  
+
   p {
+    color: #396d7b;
     margin: 0;
+    text-align: left;
   }
 
   .spacer {
@@ -307,10 +331,10 @@
 <div class="obs">
 
   <h1>Liste des Observations</h1>  <br>
-  <ul *ngFor="let o of obs">
+  <ul class="listObs" *ngFor="let o of obs">
 
-    <h2>Titre :  {{o.code.text}}</h2><br>
-    Observation : {{o.valueString}}<br>
+    <h2>{{o.code.text}}</h2><br>
+    <p>{{o.valueString}}<br></p>
     <br>
   </ul>
 </div>
