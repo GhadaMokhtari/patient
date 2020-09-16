@@ -26,8 +26,10 @@
 
   .listObs {
     text-align:center;
-    border-style: none;
+    border-style:solid;
     background-color: #EDF1F4;
+    border: 1px solid #E0E8ED;
+    border-radius: 5px;
     margin: 0 400px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -336,7 +338,7 @@
 </div>
 <div class="obs">
 
-  <h1>Liste des Observations</h1>  <br>
+  <h1>Mes observations</h1>  <br>
   <ul class="listObs" *ngFor="let o of obs">
 
     <h2>{{o.code.text}}</h2><br>

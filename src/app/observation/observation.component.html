@@ -17,17 +17,47 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
+  h1 {text-align: center;
+    color: #d8ba73;}
   h2,
-  h3,
+  h3{color:#396d7b;
+    font-style: normal;
+  text-align: center;}
   h4,
   h5,
   h6 {
     margin: 8px 0;
   }
 
+  form{
+    margin: 0 400px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom:20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: #EDF1F4;
+    border: 1px solid #E0E8ED;
+    align-items: center;
+    text-align: center;
+
+  }
+
+
   p {
     margin: 0;
+  }
+
+  button{
+    background-color: #396d7b;
+    margin: 10px 10px;
+    padding: 20px 20px;
+    font-weight: bold;
+    size: 50px 50px;
+    overflow: hidden;
+    text-align: center;
   }
 
   .spacer {
@@ -39,7 +69,7 @@
     margin: -8px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color:#0249D8;
     color: white;
     font-weight: 600;
   }
@@ -75,68 +105,7 @@
     margin-right: 8px;
   }
 
-  .card svg.material-icons path {
-    fill: #888;
-  }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .card {
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 100px;
-    width: 400px;
-    margin-top: 80px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
 
   svg#rocket {
     width: 80px;
@@ -156,12 +125,12 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color:#e9dcbe;
     text-decoration: none;
   }
 
   a:hover {
-    color: #125699;
+    color: #d79a10;
   }
 
   .terminal {
@@ -263,25 +232,10 @@
     width: 1920px;
   }
 
-
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
+     svg#rocket-smoke {
       right: 120px;
       transform: rotate(-5deg);
     }
@@ -294,11 +248,7 @@
     }
   }
 
-  #form{
-    margin-top: 200px;
-    text-align: center;
-    size: 200px;
-  }
+
   label{
     size: 50px;
   }
@@ -321,7 +271,8 @@
 
   }
 
-  h1 { color: #d79a10; }
+
+   h1 { color: #d79a10; }
 </style>
 
 
@@ -348,15 +299,15 @@
   <toaster-container></toaster-container>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label for="motif">
-Motif :     </label><br>
-    <input type="text" id="motif" class="form-control" name="motif" ngModel><br><br><br>
+<h3>Motif</h3>     </label><br>
+    <input type="text" id="motif" class="form-control"  name="motif" ngModel><br><br><br>
     <label for="Description">
-Description :     </label><br>
-    <textarea type="text" id="description" class="form-control" name="description" ngModel></textarea>
+<h3>Symptômes</h3>      </label><br>
+    <textarea type="text" id="description" class="form-control"  name="description" ngModel></textarea>
     <br>
 <div class="btn">
-    <button id="btnValid" class="btn btn-primary" type ="submit" style="color: #1976d2"> Valider </button>
-    <button id="btnRetour" class="btn btn-primary" type ="submit" routerLink="" style="color: #1976d2"> Retour </button>
+    <button id="btnValid" class="btn btn-primary" type ="submit"  style="width: 90px; height: 40px;"> Valider </button>
+    <button id="btnRetour" class="btn btn-primary"  style="width: 90px; height: 40px;"><a routerLink=""> Retour </a></button>
 </div>
   </form>
 
