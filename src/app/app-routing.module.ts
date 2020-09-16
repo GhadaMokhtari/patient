@@ -13,7 +13,6 @@ const routes: Routes = [
   {path :'patient', component: PatientComponent}
 ];
 
-
 @NgModule({
   declarations: [],
   imports: [
