@@ -1,1 +1,7 @@
-<p>diagnostic works!</p>
+<p>Liste des Diagnostic</p> <br>
+<li *ngFor="let d of diag">
+
+Titre : {{d.code.coding[0].display}}<br>
+Conclusion : {{d.conclusion}}<br>
+  <br>
+</li>

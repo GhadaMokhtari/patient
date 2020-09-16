@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RestService} from '../rest.service';
 
 @Component({
   selector: 'app-diagnostic',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diagnostic.component.css']
 })
 export class DiagnosticComponent implements OnInit {
-
-  constructor() { }
+diag: any;
+  constructor(private service: RestService) {
+    service.getDiagnostic().then(diag => this.diag = diag);
+    console.log(this.diag);
+  }
 
   ngOnInit() {
   }

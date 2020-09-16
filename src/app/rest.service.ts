@@ -12,7 +12,7 @@ export class RestService {
   constructor(private http: HttpClient) { }
 
   postObservation(observation: any): Promise<Response> {
-    return this.http.post(this.url, observation
+    return this.http.post(this.url + 'observation', observation
     )
       .toPromise().then(response => response)
       .catch(this.handleError);
@@ -26,13 +26,13 @@ export class RestService {
   }
 
   getObservation(observation: any): Promise<any> {
-    return this.http.put(this.url + 'observation', observation)
+    return this.http.put(this.url + 'observation?subject.reference=Patient/123456789', observation)
       .toPromise().then(response => response)
       .catch(this.handleError);
   }
 
   getDiagnostic(): Promise<any> {
-    return this.http.get(this.url + 'observation?subject.reference=Patient/123456789', {
+    return this.http.get(this.url + 'diagnostic-report?subject.reference=Patient/123456789', {
     })
       .toPromise().then(response => response)
       .catch(this.handleError);

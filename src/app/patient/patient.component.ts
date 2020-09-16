@@ -16,6 +16,7 @@ patient: any;
 
   constructor(private service: RestService) {
     service.getPatient().then(patient => this.patient = patient);
+    console.log(this.patient);
   }
 
 }
