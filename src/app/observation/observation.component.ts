@@ -22,7 +22,7 @@ service: any;
   onSubmit(form: NgForm) {
 
     const ob = {
-      id: '5f60955f3ef92800151f13ad',
+
       resourceType: 'Observation',
       status: 'registered',
       code: {
@@ -34,7 +34,6 @@ service: any;
       performer: [
         {
           reference: 'Practitioner/5f5f8cbe3ef92800151f13a9'
-
         }
       ],
       valueString: form.value.description

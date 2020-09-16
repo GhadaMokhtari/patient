@@ -5,14 +5,16 @@ import {ObservationComponent} from './observation/observation.component';
   providedIn: 'root'
 })
 export class RestService {
- private readonly url = 'http://fhir.eole-consulting.io/api/';
+ private readonly url = 'https://fhir.eole-consulting.io/api/';
 
 
 
   constructor(private http: HttpClient) { }
 
   postObservation(observation: any): Promise<Response> {
-    return this.http.post(this.url + 'observation', observation
+    return this.http.post(this.url + 'observation', observation, {
+      headers : {'Content-Type': 'application/json'}
+      }
     )
       .toPromise().then(response => response)
       .catch(this.handleError);
