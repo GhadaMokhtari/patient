@@ -20,6 +20,15 @@ export class RestService {
       .catch(this.handleError);
   }
 
+  postRdv(rdv: any): Promise<Response> {
+    return this.http.post(this.url + 'appointment', rdv, {
+        headers : {'Content-Type': 'application/json'}
+      }
+    )
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
+
   getPatient(): Promise<any> {
     return this.http.get(this.url + 'patient/123456789', {
     })

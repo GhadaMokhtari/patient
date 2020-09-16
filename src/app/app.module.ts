@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RestService } from './rest.service';
 import { AppComponent } from './app.component';
 import { ObservationComponent } from './observation/observation.component';
 import { DiagnosticComponent } from './diagnostic/diagnostic.component';
@@ -9,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { PagePrincipaleComponent } from './page-principale/page-principale.component';
 import {FormsModule} from '@angular/forms';
-import {AlertModule} from 'ngx-bootstrap/alert';
+import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 import {ObservationPatientComponent} from './observation-patient/observation-patient.component';
 
 @NgModule({
@@ -19,11 +20,11 @@ import {ObservationPatientComponent} from './observation-patient/observation-pat
     ObservationPatientComponent,
     DiagnosticComponent,
     PatientComponent,
-    PagePrincipaleComponent
+    PagePrincipaleComponent,
+    RendezVousComponent
   ],
   imports: [
     BrowserModule,
-    AlertModule.forRoot(),
     AppRoutingModule,
     RouterModule,
     FormsModule,
