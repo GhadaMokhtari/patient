@@ -24,8 +24,8 @@ rdv: any;
 
   onSubmit(form: NgForm) {
 
-    let d1 = new Date(form.value.daterdv);
-    let d2 = new Date(form.value.daterdv);
+    const  d1 = new Date(form.value.daterdv);
+    const d2 = new Date(form.value.daterdv);
     d2.setMinutes( d2.getMinutes() + 30 );
 
     const rdv =  {
@@ -63,6 +63,7 @@ rdv: any;
    };
     console.log(rdv);
     this.service.postRdv(rdv).then(data => {console.log(data); });
+    document.location.reload(true);
 
 // let test= form.value.daterdv + 4;
 // console.log(form.value.motif);
