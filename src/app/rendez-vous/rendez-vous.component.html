@@ -1,0 +1,789 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 100px;
+    width: 400px;
+    margin-top: 80px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: 100vh;
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  #bienvenue{
+    margin-top: 80px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    background-color: #1976d2;
+    border-radius: 10px;
+    color: #eeeeee;
+    font-size: x-large;
+  }
+
+  #btnOb{
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  #btnDia{
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  #btnAff{
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  #btnRDV{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  /*-------------------*/
+  html, body {
+    align-items: center;
+    background: #f2f4f8;
+    border: 0;
+    display: flex;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    --background: white;
+    --border: rgba(0, 0, 0, 0.125);
+    --borderDark: rgba(0, 0, 0, 0.25);
+    --borderDarker: rgba(0, 0, 0, 0.5);
+    --bgColorH: 0;
+    --bgColorS: 0%;
+    --bgColorL: 98%;
+    --fgColorH: 210;
+    --fgColorS: 50%;
+    --fgColorL: 38%;
+    --shadeDark: 0.3;
+    --shadeLight: 0.7;
+    --shadeNormal: 0.5;
+    --borderRadius: 0.125rem;
+    --highlight: #306090;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--borderRadius);
+    box-shadow: 0 1rem 1rem -0.75rem var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  form .email, form .email a {
+    color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+    font-size: 0.825rem;
+    order: 4;
+    text-align: center;
+    margin-top: 0.25rem;
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    display: inline;
+  }
+
+  form a:hover {
+    color: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+    transition: color 0.25s;
+  }
+
+  form a:focus {
+    color: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+    outline: 1px dashed hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+    outline-offset: 2px;
+  }
+
+  form > div {
+    order: 2;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label-show-password {
+    order: 3;
+  }
+
+  label > span {
+    color: var(--borderDarker);
+    display: block;
+    font-size: 0.825rem;
+    margin-top: 0.625rem;
+    order: 1;
+    transition: all 0.25s;
+  }
+
+  label > span.required::after {
+    content: "*";
+    color: #dd6666;
+    margin-left: 0.125rem;
+  }
+
+  label input {
+    order: 2;
+    outline: none;
+  }
+
+  label input::placeholder {
+    color: var(--borderDark);
+  }
+
+  /* trick from https://css-tricks.com/snippets/css/password-input-bullet-alternatives/ */
+  label input[name="password"] {
+    -webkit-text-security: disc;
+  }
+
+  input[name="show-password"]:checked ~ div label input[name="password"] {
+    -webkit-text-security: none;
+  }
+
+  label:hover span {
+    color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  }
+
+  input[type="checkbox"] + div label:hover span::before,
+  label:hover input.text {
+    border-color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  }
+
+  label input.text:focus,
+  label input.text:active {
+    border-color:  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+    box-shadow: 0 1px  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+  }
+
+  input.text:focus + span,
+  input.text:active + span {
+    color:  hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+  }
+
+  input {
+    border: 1px solid var(--border);
+    border-radius: var(--borderRadius);
+    box-sizing: border-box;
+    font-size: 1rem;
+    height: 2.25rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+    order: 2;
+    padding: 0.25rem 0.5rem;
+    width: 15rem;
+    transition: all 0.25s;
+  }
+
+  input[type="submit"] {
+    color: hsl(var(--bgColorH), var(--bgColorS), var(--bgColorL));
+    background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 0.625rem;
+    order: 4;
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+    padding-left: 0;
+    text-transform: uppercase;
+  }
+
+  input[type="checkbox"]:focus + label span::before,
+  input[type="submit"]:focus {
+    outline: 1px dashed hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+    outline-offset: 2px;
+  }
+
+  input[type="submit"]:focus {
+    background: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+  }
+
+  input[type="submit"]:hover {
+    background: hsl(var(--fgColorH), var(--fgColorS), calc(var(--fgColorL) * 0.85));
+  }
+
+  input[type="submit"]:active {
+    background: hsl(var(--fgColorH), calc(var(--fgColorS) * 2), calc(var(--fgColorL) * 1.15));
+    transition: all 0.125s;
+  }
+
+  /** Checkbox styling */
+  .a11y-hidden {
+    position: absolute;
+    top: -1000em;
+    left: -1000em;
+  }
+
+  input[type="checkbox"] + label span {
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  input[type="checkbox"] + label span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 1px solid var(--borderDark);
+    border-radius: var(--borderRadius);
+    transition: all 0.25s;
+    outline:1px dashed transparent;
+    outline-offset: 2px;
+  }
+
+  input[type="checkbox"]:checked + label span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    width: 0.375rem;
+    height: 0.375rem;
+    border: 1px solid var(--borderDark);
+    border-radius: var(--borderRadius);
+    transition: all 0.25s;
+    outline:1px dashed transparent;
+    outline-offset: 2px;
+    background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  }
+
+  /** PERSON */
+  figure {
+    --skinH: 30;
+    --skinS: 100%;
+    --skinL: 87%;
+    --hair: rgb(180,70,60);
+    background: hsl(var(--fgColorH), calc(var(--fgColorS) * 2), 95%);
+    border: 1px solid rgba(0,0,0,0.0625);
+    border-radius: 50%;
+    height: 0;
+    margin: auto auto;
+    margin-bottom: 2rem;
+    order: 1;
+    padding-top: 60%;
+    position: relative;
+    width: 60%;
+    overflow: hidden;
+  }
+
+  figure div {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  figure .skin {
+    background: hsl(var(--skinH), var(--skinS), var(--skinL));
+    box-shadow: inset 0 0 3rem hsl(var(--skinH), var(--skinS), calc(var(--skinL) * 0.95));
+  }
+
+  figure .head {
+    top: 40%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    box-shadow: 0 -0.175rem 0 0.125rem var(--hair);
+  }
+
+  figure  .ears {
+    top: 47%;
+    left: 50%;
+    white-space: nowrap;
+  }
+
+  figure .ears::before,
+  figure .ears::after {
+    content: "";
+    background: hsl(var(--skinH), var(--skinS), var(--skinL));
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin: 0 2.1rem;
+  }
+
+  figure .head .eyes {
+    top: 55%;
+    left: 50%;
+    white-space: nowrap;
+  }
+
+  @-webkit-keyframes blink {
+    0%, 90%, 100% {
+      height: 10px;
+    }
+    95% {
+      height: 0;
+    }
+  }
+
+  @keyframes blink {
+    0%, 90%, 100% {
+      height: 10px;
+    }
+    95% {
+      height: 0px;
+    }
+  }
+
+  figure .head .eyes::before,
+  figure .head .eyes::after {
+    content: "";
+    background: var(--borderDarker);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 0.5rem;
+    -webkit-animation: blink 5s infinite;
+    animation: blink 5s infinite;
+    transition: all 0.15s;
+  }
+
+  input[name="show-password"]:checked ~ figure .head .eyes::before,
+  input[name="show-password"]:checked ~ figure .head .eyes::after {
+    height: 0.125rem;
+    animation: none;
+  }
+
+  figure .head .mouth {
+    border: 0.125rem solid transparent;
+    border-bottom: 0.125rem solid var(--borderDarker);
+    width: 25%;
+    border-radius: 50%;
+    transition: all 0.5s
+  }
+
+  form:invalid figure .head .mouth {
+    top: 75%;
+    left: 50%;
+    height: 10%;
+  }
+
+  form:valid figure .head .mouth {
+    top: 60%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+  }
+
+  figure .hair {
+    top: 40%;
+    left: 50%;
+    width: 66.66%;
+    height: 66.66%;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  figure .hair::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--hair);
+    border-radius: 50%;
+    top: -60%;
+    left: -50%;
+    box-shadow: 4rem 0 var(--hair);
+  }
+
+  figure .neck {
+    width: 10%;
+    height: 40%;
+    top: 62%;
+    left: 50%;
+    background: hsl(var(--skinH), var(--skinS), calc(var(--skinL) * 0.94));
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 0.25rem var(--border);
+  }
+
+  figure .person-body {
+    width: 60%;
+    height: 100%;
+    border-radius: 50%;
+    background: red;
+    left: 50%;
+    top: 126%;
+    background: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  }
+
+  figure .shirt-1,
+  figure .shirt-2 {
+    width: 12%;
+    height: 7%;
+    background: hsl(var(--bgColorH), var(--bgColorS), var(--bgColorL));
+    top: 76%;
+    left: 36.5%;
+    transform: skew(-10deg) rotate(15deg)
+  }
+
+  figure .shirt-2 {
+    left: 52.5%;
+    transform: skew(10deg) rotate(-15deg)
+  }
+
+</style>
+
+<div class="toolbar" role="banner">
+  <img
+    width="70"
+    alt="Galyc Logo"
+    src="././assets/logoGalyc.png"
+  />
+  <div class="spacer"></div>
+  <div>
+    <a routerLink="/patient" style="color: #eeeeee; margin-right: 20px">Accueil</a>
+    <a routerLink="/patient" style="color: #eeeeee; margin-right: 20px">Compte</a>
+  </div>
+
+  <form method="get" action="javascript: void(0);" id="login-form" class="login-form" autocomplete="off" role="main">
+    <h1 class="a11y-hidden">Login Form</h1>
+    <div>
+      <label class="label-email">
+        <input type="email" class="text" name="email" placeholder="Email" tabindex="1" required />
+        <span class="required">Email</span>
+      </label>
+    </div>
+    <input type="checkbox" name="show-password" class="show-password a11y-hidden" id="show-password" tabindex="3" />
+    <label class="label-show-password" for="show-password">
+      <span>Show Password</span>
+    </label>
+    <div>
+      <label class="label-password">
+        <input type="text" class="text" name="password" placeholder="Password" tabindex="2" required />
+        <span class="required">Password</span>
+      </label>
+    </div>
+    <input type="submit" value="Log In" />
+    <div class="email">
+      <a href="#">Forgot password?</a>
+    </div>
+    <figure aria-hidden="true">
+      <div class="person-body"></div>
+      <div class="neck skin"></div>
+      <div class="head skin">
+        <div class="eyes"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="hair"></div>
+      <div class="ears"></div>
+      <div class="shirt-1"></div>
+      <div class="shirt-2"></div>
+    </figure>
+  </form>
+
+
+  <div class="form-group">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label for="daterdv">
+      Date :     </label><br>
+    <input type="datetime-local" id="daterdv" name="daterdv"
+
+              min="2020-09-16T00:00" max="2022-06-14T00:00" ngModel>
+    <label for="Motif">
+      Motif :     </label><br>
+    <input type="text" id="motif" class="form-control" name="motif" ngModel>
+    <br>
+
+    <button class="btn btn-primary" type ="submit">Valider</button>
+
+
+  </form>
+
+
+</div>
