@@ -38,9 +38,9 @@ export class RestService {
       .catch(this.handleError);
   }
 
-  getMedecin(): Promise<any>{
-    return this.http.get(this.url+'practitioner/5f5f8cbe3ef92800151f13a9',{
-    }).toPromise().then(response=>response)
+  getMedecin(): Promise<any> {
+    return this.http.get(this.url + 'practitioner/5f5f8cbe3ef92800151f13a9', {
+    }).toPromise().then(response => response)
       .catch(this.handleError);
   }
 
