@@ -12,6 +12,8 @@ import { PagePrincipaleComponent } from './page-principale/page-principale.compo
 import {FormsModule} from '@angular/forms';
 import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 import {ObservationPatientComponent} from './observation-patient/observation-patient.component';
+import {ToasterModule} from "angular2-toaster";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {ObservationPatientComponent} from './observation-patient/observation-pat
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ToasterModule
 
   ],
   providers: [],
