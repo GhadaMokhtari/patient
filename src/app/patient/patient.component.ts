@@ -10,13 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class PatientComponent implements OnInit {
 patient: any;
+medecin: any;
 
   ngOnInit(): void {
   }
 
   constructor(private service: RestService) {
     service.getPatient().then(patient => this.patient = patient);
-    console.log(this.patient);
+    service.getMedecin().then((medecin => this.medecin= medecin));
   }
 
 }
