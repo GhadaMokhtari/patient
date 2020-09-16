@@ -345,6 +345,7 @@
 
 <div class="form-group" id="form">
   <h1>Entrez vos symptômes</h1>
+  <toaster-container></toaster-container>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label for="motif">
 Motif :     </label><br>
@@ -354,7 +355,7 @@ Description :     </label><br>
     <textarea type="text" id="description" class="form-control" name="description" ngModel></textarea>
     <br>
 <div class="btn">
-    <button id="btnValid" class="btn btn-primary" type ="submit" style="color: #1976d2"> Valider</button>
+    <button id="btnValid" class="btn btn-primary" type ="submit" style="color: #1976d2"> Valider </button>
     <button id="btnRetour" class="btn btn-primary" type ="submit" routerLink="" style="color: #1976d2"> Retour </button>
 </div>
   </form>
