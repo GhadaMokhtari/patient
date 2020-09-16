@@ -30,6 +30,15 @@
     margin: 0;
   }
 
+  button{
+    background-color: #396d7b;
+    margin: 10px 10px;
+    padding: 20px 20px;
+    font-weight: bold;
+    size: 50px 50px;
+    overflow: hidden;
+  }
+  
   .spacer {
     flex: 1;
   }
@@ -39,7 +48,7 @@
     margin: -8px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color:#0249D8;
     color: white;
     font-weight: 600;
   }
@@ -89,10 +98,10 @@
   .card {
     border-radius: 4px;
     border: 1px solid #eee;
-    background-color: #fafafa;
+    background-color: #EDF1F4;
     height: 100px;
-    width: 400px;
-    margin-top: 80px;
+    width: 500px;
+    margin-top: 20px;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -125,7 +134,7 @@
   }
 
   .card.highlight-card {
-    background-color: #1976d2;
+    background-color: #0249D8;
     color: white;
     font-weight: 600;
     border: none;
@@ -156,12 +165,12 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color:#e9dcbe;
     text-decoration: none;
   }
 
   a:hover {
-    color: #125699;
+    color: #d79a10;
   }
 
   .terminal {
@@ -295,13 +304,13 @@
   }
 
   #bienvenue{
-    margin-top: 80px;
+    margin-top: 40px;
     width: 300px;
     height: 50px;
     text-align: center;
-    background-color: #1976d2;
+    background-color: #396d7b;
     border-radius: 10px;
-    color: #eeeeee;
+    color: #d79a10;
     font-size: x-large;
   }
 
@@ -355,14 +364,14 @@
   <div id="bienvenue" class="card">
     <span style="text-align: center"> Bienvenue {{patient.name[0].given}} {{patient.name[0].family}}  </span>
   </div>
-
+<div class="card">
+    <button id="btnRDV" style="width: 130px; height: 70px;" ><a routerLink="/rdv"> Nouveau RDV </a></button>
+  </div>
   <div class="card">
-    <button id="btnOb"> <a routerLink="/observation">Créer une observation</a> </button>
-    <button id="btnDia"> <a routerLink="/diagnostic">Afficher les diagnostics</a> </button>
-    <button id="btnAff"> <a routerLink="/observationPatient">Afficher les observations </a></button>
+    <button id="btnOb" style="width: 130px; height: 70px;"> <a routerLink="/observation">Nouvelle observation</a> </button>
+    <button id="btnDia" style="width: 130px; height: 70px;"> <a routerLink="/diagnostic"> Mes diagnostics</a> </button>
+    <button id="btnAff" style="width: 130px; height: 70px;"> <a routerLink="/observationPatient">Mes observations </a></button>
   </div>
 
-  <div class="card">
-    <button id="btnRDV" style="color: #1976d2" ><a routerLink="/rdv">Afficher les observations </a> Prendre un RDV </button>
-  </div>
+  
 </div>
