@@ -14,7 +14,6 @@ const routes: Routes = [
   {path: 'diagnostic', component: DiagnosticComponent},
   {path : 'patient', component: PatientComponent},
   {path : 'rdv', component: RendezVousComponent},
-  {path : 'patient', component: PatientComponent},
   { path: 'observationPatient', component: ObservationPatientComponent }
 
 ];
