@@ -1,5 +1,7 @@
-<form>
+<!--
+
   <div class="form-group">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label>Motif</label>
     <input  class="form-control" id="motif" aria-describedby="emailHelp" placeholder="Entrer le motif de l'observation">
   </div>
@@ -11,5 +13,22 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+-->
+
+<div class="form-group">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label for="motif">
+Motif :     </label><br>
+    <input type="text" id="motif" class="form-control" name="motif" ngModel><br>
+    <label for="Description">
+Description :     </label><br>
+    <textarea type="text" id="description" class="form-control" name="description" ngModel></textarea>
+    <br>
+
+    <button class="btn btn-primary" type ="submit">Valider</button>
+
+
+  </form>
+
+
+</div>

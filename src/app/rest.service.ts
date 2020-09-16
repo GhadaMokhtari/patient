@@ -5,10 +5,18 @@ import {ObservationComponent} from './observation/observation.component';
   providedIn: 'root'
 })
 export class RestService {
-  private readonly url = 'http://fhir.eole-consulting.io/api/';
+ private readonly url = 'http://fhir.eole-consulting.io/api/';
+
 
 
   constructor(private http: HttpClient) { }
+
+  postObservation(observation: any): Promise<Response> {
+    return this.http.post(this.url, observation
+    )
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
 
   getPatient(): Promise<any> {
     return this.http.get(this.url + 'patient/123456789', {
@@ -17,9 +25,8 @@ export class RestService {
       .catch(this.handleError);
   }
 
-  getObservation(): Promise<any> {
-    return this.http.get(this.url + 'observation?subject.reference=Patient/123456789', {
-    })
+  getObservation(observation: any): Promise<any> {
+    return this.http.put(this.url + 'observation', observation)
       .toPromise().then(response => response)
       .catch(this.handleError);
   }
@@ -31,12 +38,7 @@ export class RestService {
       .catch(this.handleError);
   }
 
-   postObservation(observation: ObservationComponent): Promise<Response> {
-    return this.http.post(this.url + '/observation', observation
-    )
-      .toPromise().then(response => response)
-      .catch(this.handleError);
-  }
+
 
 
   private handleError(error: any): Promise<any> {
