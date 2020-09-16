@@ -297,30 +297,6 @@
   #bienvenue{
     margin-top: 80px;
   }
-
-  #btnOb{
-    margin-right: 50px;
-    width: 100px;
-    color: #eeeeee;
-    height: 40px;
-    border-radius: 10px;
-    /*background-color: #1976d2;*/
-  }
-
-  #btnDia{
-    margin-right: 50px;
-    width: 100px;
-    color: #eeeeee;
-    height: 40px;
-    border-radius: 10px;
-  }
-
-  #btnAff{
-    width: 100px;
-    color: #eeeeee;
-    height: 40px;
-    border-radius: 10px;
-  }
 </style>
 
 <!-- Toolbar -->
@@ -332,9 +308,7 @@
   />
   <div class="spacer"></div>
   <div>
-    <a routerLink="" style="color: #eeeeee; margin-right: 20px">Accueil</a>
-
-    <a routerLink="/patient" style="color: #eeeeee; margin-right: 20px">Compte</a>
+    <a routerLink="/patient" style="color: #eeeeee">Compte</a>
   </div>
 
 </div>
@@ -347,9 +321,9 @@
   </div>
 
   <div class="card">
-    <button id="btnOb"> <a routerLink="/observation">Créer une observation</a> </button>
-    <button id="btnDia"> <a routerLink="/diagnostic">Afficher le diagnostic</a> </button>
-    <button id="btnAff"> Afficher les observations </button>
+    <button class="btn btn-secondary"> <a routerLink="/observation">Créer une observation</a> </button>
+    <button> <a routerLink="/diagnostic">Afficher le diagnostic</a> </button>
+    <button> <a routerLink="/observationPatient">Afficher les observations </a></button>
     <!-- <button type="submit" class="btn btn-info pull-right" style="height: 50px; width: 100px;background-color: #abc6d9" > Créer une observation </button>
      <button class="btn btn-info pull-right" style="height: 50px; width: 100px;background-color: #abc6d9" > afficher le diagnostic </button>-->
   </div>

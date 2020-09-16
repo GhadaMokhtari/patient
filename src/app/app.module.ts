@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { PagePrincipaleComponent } from './page-principale/page-principale.component';
 import {FormsModule} from '@angular/forms';
-import {AlertModule} from "ngx-bootstrap/alert";
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {ObservationPatientComponent} from './observation-patient/observation-patient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObservationComponent,
+    ObservationPatientComponent,
     DiagnosticComponent,
     PatientComponent,
     PagePrincipaleComponent
