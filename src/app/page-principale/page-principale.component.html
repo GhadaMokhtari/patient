@@ -90,9 +90,9 @@
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
+    height: 100px;
+    width: 400px;
+    margin-top: 80px;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -293,14 +293,18 @@
       visibility: hidden;
     }
   }
+
+  #bienvenue{
+    margin-top: 80px;
+  }
 </style>
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    width="70"
+    alt="Galyc Logo"
+    src="././assets/logoGalyc.png"
   />
   <div class="spacer"></div>
   <div>
@@ -312,13 +316,14 @@
 <div class="content" role="main">
 
   <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
+  <div id="bienvenue" class="card highlight-card card-small">
     <span> Welcome to {{patient.name[0].given}} {{patient.name[0].family}}  </span>
   </div>
 
   <div class="card">
-    <a routerLink="/observation">Créer une observation</a>
-    <a routerLink="/diagnostic">Afficher le diagnostic</a>
+    <button class="btn btn-secondary"> <a routerLink="/observation">Créer une observation</a> </button>
+    <button> <a routerLink="/diagnostic">Afficher le diagnostic</a> </button>
+    <button> Afficher les observations </button>
     <!-- <button type="submit" class="btn btn-info pull-right" style="height: 50px; width: 100px;background-color: #abc6d9" > Créer une observation </button>
      <button class="btn btn-info pull-right" style="height: 50px; width: 100px;background-color: #abc6d9" > afficher le diagnostic </button>-->
   </div>
