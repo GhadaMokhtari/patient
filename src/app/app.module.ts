@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { PagePrincipaleComponent } from './page-principale/page-principale.component';
 import {FormsModule} from '@angular/forms';
+import { ObservationPatientComponent } from './observation-patient/observation-patient.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule} from '@angular/forms';
     ObservationComponent,
     DiagnosticComponent,
     PatientComponent,
-    PagePrincipaleComponent
+    PagePrincipaleComponent,
+    ObservationPatientComponent
   ],
   imports: [
     BrowserModule,

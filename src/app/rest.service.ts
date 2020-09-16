@@ -31,6 +31,12 @@ export class RestService {
       .catch(this.handleError);
   }
 
+  observationDuPatient(): Promise<any> {
+    return this.http.get(this.url + 'observation?subject.reference=Patient/123456789')
+      .toPromise().then(response => response)
+      .catch(this.handleError);
+  }
+
   getDiagnostic(): Promise<any> {
     return this.http.get(this.url + 'diagnostic-report?subject.reference=Patient/123456789', {
     })
