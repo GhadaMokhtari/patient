@@ -39,7 +39,11 @@
     padding-right: 10px;
     border-radius: 5px;
     background-color: #EDF1F4;
-    border: 1px solid #E0E8ED;}
+    border: 1px solid #E0E8ED;
+    align-items: center;
+    text-align: center;
+    
+  }
 
 
   p {
@@ -101,16 +105,7 @@
     margin-right: 8px;
   }
 
-  .card svg.material-icons path {
-    fill: #888;
-  }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
+  
 
   svg#rocket {
     width: 80px;
@@ -253,11 +248,7 @@
     }
   }
 
-  #form{
-    margin-top: 50px;
-    text-align: center;
-    size: 200px;
-  }
+  
   label{
     size: 50px;
   }
@@ -309,7 +300,7 @@
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <label for="motif">
 <h3>Motif</h3>     </label><br>
-    <input type="text" id="motif" class="form-control" style="width: 150px; height: 40px;" name="motif" ngModel><br><br><br>
+    <input type="text" id="motif" class="form-control" style="width: 150px; height: 40px; align-items: center;" name="motif" ngModel><br><br><br>
     <label for="Description">
 <h3>Symptômes</h3>      </label><br>
     <textarea type="text" id="description" class="form-control" style="width: 150px; height: 60px;" name="description" ngModel></textarea>
